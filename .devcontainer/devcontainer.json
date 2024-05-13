@@ -1,0 +1,6 @@
+{
+    "name": "Developer CLI",
+	"build": { "dockerfile": "Dockerfile" },
+    "privileged": true,
+    "postStartCommand": "/usr/sbin/sshd -D"
+}

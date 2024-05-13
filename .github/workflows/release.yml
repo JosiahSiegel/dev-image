@@ -1,0 +1,28 @@
+name: "(Release) Release dev container templates"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pre-build image and run make ci-build in dev container
+        uses: devcontainers/ci@v0.3
+        with:
+          imageName: ghcr.io/josiahsiegel/dev-image
+          push: always
