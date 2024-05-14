@@ -1,6 +1,10 @@
+/**
+ * Defines the configuration for the development container, including the name, build settings, and command override.
+ */
 {
     "name": "Developer CLI",
-	"build": { "dockerfile": "Dockerfile" },
-    "privileged": true,
-    "postStartCommand": "/usr/sbin/sshd -D"
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "overrideCommand": false
 }

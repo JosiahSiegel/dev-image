@@ -1,3 +1,6 @@
+# This workflow is triggered on pushes to the main branch and on manual workflow dispatch.
+# It logs in to the GitHub Container Registry and builds and pushes a dev container image.
+
 name: "(Release) Release dev container templates"
 
 on:
