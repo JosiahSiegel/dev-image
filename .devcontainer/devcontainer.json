@@ -1,11 +1,22 @@
-/**
- * Defines the configuration for the development container, including the name, build settings, and command override.
- */
 {
     "name": "Developer CLI",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+	"dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+	"remoteEnv": {
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode-remote.remote-containers",
+				"hashicorp.terraform",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
     "overrideCommand": false,
-    "runArgs": ["--env-file",".devcontainer/devcontainer.env"]
+	"otherPortsAttributes": {
+		"onAutoForward": "silent"
+	}
 }
