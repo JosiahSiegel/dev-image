@@ -6,5 +6,6 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "overrideCommand": false
+    "overrideCommand": false,
+    "runArgs": ["--env-file",".devcontainer/devcontainer.env"]
 }
