@@ -2,7 +2,7 @@
     "name": "Developer CLI",
 	"dockerComposeFile": "docker-compose.yml",
     "service": "app",
-    "workspaceFolder": "/workspace",
+    "workspaceFolder": "/home/app/workspace",
 	"remoteEnv": {
 		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
 	},
