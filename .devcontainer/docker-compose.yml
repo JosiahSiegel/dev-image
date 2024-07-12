@@ -9,4 +9,4 @@ services:
         required: false
     volumes:
       # Update this to wherever you want VS Code to mount the folder of your project
-      - ..:/home/app/workspace:cached
+      - ..:/workspace/dev-image:cached
